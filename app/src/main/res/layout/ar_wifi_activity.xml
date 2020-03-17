@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="arWifiViewModel"
+            type="com.example.thesis_app.viewModel.ArWifiActivityViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/coordinatorLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".main.ArWifiActivity">
+
+        <fragment
+            android:id="@+id/wifi_ar_fragment"
+            android:name="com.example.thesis_app.helper.CloudAnchorFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/transparent"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/wifi_bssid"
+                style="@style/MyTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/wifi_bssid_textview" />
+
+            <TextView
+                android:id="@+id/wifi_signal_strength"
+                style="@style/MyTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/current_signal_strength_textview" />
+
+            <TextView
+                android:id="@+id/wifi_distance"
+                style="@style/MyTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/distance_wifi_textview" />
+
+            <TextView
+                android:id="@+id/wifi_bearing"
+                style="@style/MyTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bearing_wifi_textview" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/capture_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/jordy"
+            android:text="Measure Signal"
+            app:layout_constraintBottom_toBottomOf="@+id/wifi_ar_fragment"
+            app:layout_constraintEnd_toEndOf="@+id/wifi_ar_fragment" />
+
+        <Button
+            android:id="@+id/resolve_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/saffron"
+            android:text="Resolve"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/clear_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/saffron"
+            android:text="Clear"
+            app:layout_constraintBottom_toTopOf="@+id/resolve_button"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/upload_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@color/saffron"
+            android:text="Upload"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/capture_button"
+            app:layout_constraintStart_toEndOf="@+id/resolve_button" />
+
+        <Button
+            android:id="@+id/place_router_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@color/saffron"
+            android:text="Place router"
+            app:layout_constraintBottom_toTopOf="@+id/upload_button"
+            app:layout_constraintStart_toStartOf="@+id/upload_button" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

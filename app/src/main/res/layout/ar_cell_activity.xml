@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="arCellViewModel"
+            type="com.example.thesis_app.viewModel.ArCellActivityViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".main.ArCellActivity">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <fragment
+                android:id="@+id/ux_fragment"
+                android:name="com.google.ar.sceneform.ux.ArFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/transparent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/frame_cellid"
+                    style="@style/MyTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/textview_cellid" />
+
+                <TextView
+                    android:id="@+id/frame_distancetocell"
+                    style="@style/MyTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/textview_distancetocell" />
+
+                <TextView
+                    android:id="@+id/frame_bearing"
+                    style="@style/MyTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bearing_to_cell" />
+
+                <TextView
+                    android:id="@+id/frame_bearing_tn"
+                    style="@style/MyTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bearing_to_true_north" />
+
+                <TextView
+                    android:id="@+id/frame_signalStrength"
+                    style="@style/MyTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cell_signal_power" />
+
+                <TextView
+                    android:id="@+id/frame_typeOfService"
+                    style="@style/MyTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/type_of_service" />
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

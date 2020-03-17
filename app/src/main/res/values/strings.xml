@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">Thesis_app</string>
+    <!-- Textview for SplashActivity -->
+    <string name="splash_screen_text">Made by Konstantinos Michelis</string>
+
+    <!-- Textviews for MainActivity -->
+    <string name="mainTextView"><u> Welcome to my thesis app! </u></string>
+    <string name="firstActivityInformation">This is the\n \"Active Cell Pointer\" function.\n By using this function you can find and display at your camera the active cell that is serving you. </string>
+    <string name="secondActivityInformation">This is the\n \"Access Point Locator\ function.\n By using this function you can search for access points in your area and pinpoint their location through exploration."</string>
+    <string name="cellButtonName">Enter Cell Indicator</string>
+    <string name="wifiButtonName">Enter AP Locator</string>
+
+    <!-- Textviews for CellActivity -->
+    <string name="ARView_text">Loading Augmented Reality…</string>
+    <string name="distanceView_text">Calculating distance to cell…</string>
+    <string name="cell_LocationView_text">Retrieving cell location…</string>
+    <string name="my_LocationView_text">Retrieving my location…</string>
+    <string name="signalsView_text">Analyzing cell signals…</string>
+
+    <!-- Messages for ArCore -->
+    <string name="arcore_not_installed">Please install ARCore</string>
+    <string name="arcore_not_updated">Please update ARCore</string>
+    <string name="app_not_updated">Please update this app</string>
+    <string name="arcore_not_supported">This device does not support AR</string>
+    <string name="camera_and_location_permission_request">Location and Camera permissions are needed to use this
+        feature
+    </string>
+    <string name="camera_permission_request">Camera permission is needed to use this feature</string>
+
+    <!-- Image description -->
+    <string name="image_content_description">Cell Tower</string>
+
+    <!-- Textviews for ArCellActivity -->
+    <string name="textview_cellid">CellId: %1$s</string>
+    <string name="textview_distancetocell">Distance to cell: %1$f</string>
+    <string name="bearing_to_cell">Bearing to serving cell: %1$f</string>
+    <string name="bearing_to_true_north">Bearing to True North: %1$f</string>
+    <string name="type_of_service">Cell connection: %1$s</string>
+    <string name="cell_signal_power">Signal strength: %1$d</string>
+
+    <!-- Textviews for WifiActivity -->
+    <string name="wifi_instructions_view">Select an access point to connect and start the search</string>
+    <string name="wi_fi_stats">Wi-Fi Access Points</string>
+    <string name="connected_wifi_textview">User connected to this wifi: <font color ="#01C6DB">%1$s</font></string>
+
+    <!-- Textviews for ArWifiActivity -->
+    <string name="wifi_bssid_textview">Wifi bssid:</string>
+    <string name="current_signal_strength_textview">Current signal strength: %1$f</string>
+    <string name="distance_wifi_textview">Distance to AP: needs 1 measurement</string>
+    <string name="distance_wifi_textview_new">LOS distance to AP: %1$f</string>
+    <string name="bearing_wifi_textview">Bearing to AP: needs 3 measurements</string>
+    <string name="bearing_wifi_textview_new">Bearing to AP: %1$s degrees</string>
+
+
+</resources>

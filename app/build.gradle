@@ -1,0 +1,106 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'com.google.ar.sceneform.plugin'
+
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    compileSdkVersion 29
+    defaultConfig {
+        applicationId "com.example.thesis_app"
+        minSdkVersion 28
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.1.0'
+    //constraint layout
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    //KTX dependencies
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0'
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //for splash screen gif
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.15'
+    //for location services
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    //for http requests
+    implementation 'com.android.volley:volley:1.1.1'
+    //for coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.1'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.1"
+
+    // Provides ARCore Session and related resources.
+    implementation 'com.google.ar:core:1.13.0'
+
+    // Provides ArFragment, and other UX resources.
+    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.13.0'
+
+    // Alternatively, use ArSceneView without the UX dependency.
+    implementation 'com.google.ar.sceneform:core:1.13.0'
+
+    //for coordinator layout
+    implementation 'com.google.android.material:material:1.0.0'
+
+    //arcore-location poly sdk
+    implementation 'com.github.appoly:ARCore-Location:1.2'
+
+    //retrofit not sure if needed anymore
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+
+    //firebase
+    implementation 'com.google.firebase:firebase-database:19.2.0'
+
+    //databinding
+    kapt "com.android.databinding:compiler:3.1.4"
+
+}
+
+
+sceneform.asset('sampledata/Glow_Stick.obj',
+        'default',
+        'sampledata/Glow_Stick.sfa',
+        'src/main/assets/Glow_Stick')
+
+sceneform.asset('sampledata/radio_tower.obj',
+        'default',
+        'sampledata/radio_tower.sfa',
+        'src/main/assets/radio_tower')
+
+
+sceneform.asset('sampledata/gloworb.obj',
+        'default',
+        'sampledata/gloworb.sfa',
+        'src/main/assets/gloworb')
